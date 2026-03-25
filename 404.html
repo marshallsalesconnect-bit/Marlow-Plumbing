@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found | Marlow Plumbing Information Resource</title>
-    <meta name="description" content="The page you are looking for could not be found." />
-    <link rel="stylesheet" href="style.css?v=7" />
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<title>Page Not Found | Marlow Plumbing Information Resource</title>
+<meta name="description" content="The page you are looking for could not be found. Use the navigation to explore plumbing information for Marlow." />
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://marlowplumbing.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "404 - Page Not Found",
+      "item": "https://marlowplumbing.co.uk/404.html"
+    }
+  ]
+}
+</script>
+
+</head>
 <body>
 
 <header>
-    <h1>Page Not Found</h1>
-    <p>The page you’re looking for doesn’t exist or may have been moved.</p>
+  <h1>Page Not Found</h1>
+  <p>Sorry — the page you were looking for doesn’t exist or may have been moved.</p>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="overview.html">Overview</a>
-    <a href="water-supply.html">Water Supply</a>
-    <a href="drainage.html">Drainage</a>
-    <a href="water-hardness.html">Water Hardness</a>
-    <a href="common-issues.html">Common Issues</a>
-    <a href="glossary.html">Glossary</a>
-    <a href="faq.html">FAQ</a>
+  <a href="index.html">Home</a>
+  <a href="overview.html">Overview</a>
+  <a href="water-supply.html">Water Supply</a>
+  <a href="drainage.html">Drainage</a>
+  <a href="water-hardness.html">Water Hardness</a>
+  <a href="common-issues.html">Common Issues</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="faq.html">FAQ</a>
 </nav>
 
 <main>
 
-<section class="page-menu">
-    <h2>Quick Navigation</h2>
-    <div class="page-menu-links">
-        <a href="index.html">Home</a>
-        <a href="overview.html">Overview</a>
-        <a href="water-supply.html">Water Supply</a>
-        <a href="drainage.html">Drainage</a>
-        <a href="water-hardness.html">Water Hardness</a>
-        <a href="common-issues.html">Common Issues</a>
-        <a href="glossary.html">Glossary</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-</section>
-
 <section>
-    <h2>We Couldn't Find That Page</h2>
-    <p>The link you followed may be broken, or the page may have been removed.</p>
-    <p>You can return to the homepage or use the navigation above to find what you’re looking for.</p>
+  <h2>Let’s Get You Back on Track</h2>
+  <p>Here are some useful pages you can visit instead:</p>
+
+  <ul>
+    <li><a href="overview.html">Overview of plumbing in Marlow</a></li>
+    <li><a href="water-supply.html">How the water supply system works</a></li>
+    <li><a href="drainage.html">Understanding drainage systems</a></li>
+    <li><a href="common-issues.html">Common plumbing issues</a></li>
+    <li><a href="faq.html">Frequently asked questions</a></li>
+  </ul>
 </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Marlow Plumbing Information Resource</p>
+  <p>&copy; 2026 Marlow Plumbing Information Resource. All rights reserved.</p>
+  <p>Domain managed by: <strong>marshall.salesconnect@gmail.com</strong></p>
 </footer>
 
 </body>
