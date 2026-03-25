@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-   Global Reset
+   RESET
 -------------------------------------------------- */
 * {
   margin: 0;
@@ -8,31 +8,31 @@
 }
 
 /* --------------------------------------------------
-   Base Typography & Layout
+   BASE LAYOUT & TYPOGRAPHY
 -------------------------------------------------- */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   background: #ffffff;
   color: #222222;
-  padding: 20px;
   max-width: 900px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 h1, h2, h3, h4 {
   color: #000000;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1.3;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   color: #333333;
 }
 
 ul {
-  margin: 10px 0 20px 20px;
+  margin: 10px 0 20px 25px;
 }
 
 li {
@@ -40,16 +40,16 @@ li {
 }
 
 /* --------------------------------------------------
-   Navigation
+   NAVIGATION
 -------------------------------------------------- */
 nav {
-  margin: 20px 0;
-  padding: 10px 0;
+  margin: 25px 0;
+  padding-bottom: 12px;
   border-bottom: 1px solid #cccccc;
 }
 
 nav a {
-  margin-right: 15px;
+  margin-right: 18px;
   text-decoration: none;
   color: #004080;
   font-weight: bold;
@@ -61,14 +61,14 @@ nav a:hover {
 }
 
 /* --------------------------------------------------
-   Sections
+   SECTIONS
 -------------------------------------------------- */
 section {
   margin-bottom: 40px;
 }
 
 /* --------------------------------------------------
-   Footer
+   FOOTER
 -------------------------------------------------- */
 footer {
   margin-top: 40px;
@@ -79,7 +79,7 @@ footer {
 }
 
 /* --------------------------------------------------
-   Dark Mode
+   DARK MODE
 -------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   body {
@@ -111,19 +111,4 @@ footer {
     border-top: 1px solid #333333;
     color: #bbbbbb;
   }
-
-  section {
-    border-color: #333333;
-  }
-}
-
-/* --------------------------------------------------
-   Optional Enhancements (kept simple for your site)
--------------------------------------------------- */
-main {
-  margin-top: 20px;
-}
-
-header {
-  margin-bottom: 20px;
 }
