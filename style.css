@@ -1,0 +1,190 @@
+/* --------------------------------------------------
+   GLOBAL RESET & BASE
+-------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f4f7;
+    color: #222;
+    line-height: 1.7;
+    padding-bottom: 40px;
+}
+
+/* Smooth text rendering */
+html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Layout container */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+header {
+    background: linear-gradient(135deg, #005a9e, #003b6a);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+
+nav {
+    background: #003b6a;
+    padding: 12px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* --------------------------------------------------
+   CONTENT SECTIONS
+-------------------------------------------------- */
+
+section {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #005a9e;
+    font-size: 1.5rem;
+}
+
+section p,
+section li {
+    font-size: 1.05rem;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #003b6a;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------------------------
+   DARK MODE (Automatic)
+-------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e5e5e5;
+    }
+
+    header {
+        background: linear-gradient(135deg, #0a84ff, #003b6a);
+    }
+
+    nav {
+        background: #002f55;
+    }
+
+    nav a {
+        background: rgba(255,255,255,0.1);
+    }
+
+    nav a:hover {
+        background: rgba(255,255,255,0.25);
+    }
+
+    section {
+        background: #1e1e1e;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    section h2 {
+        color: #4da3ff;
+    }
+
+    footer {
+        background: #002f55;
+    }
+}
+
+/* --------------------------------------------------
+   MOBILE OPTIMISATION
+-------------------------------------------------- */
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 90%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
