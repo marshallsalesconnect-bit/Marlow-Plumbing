@@ -19,6 +19,10 @@
     --nav-bg: #ffffff;
     --nav-text: #0a3d62;
     --shadow: rgba(0,0,0,0.08);
+
+    --max-width: 900px;
+    --radius-card: 12px;
+    --radius-button: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,61 +41,109 @@
 /* -----------------------------------
    BASE STYLES
 ----------------------------------- */
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: "Inter", Arial, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* -----------------------------------
-   NAVIGATION BAR (NON-STICKY)
+   NAVIGATION BAR (MOBILE-FIRST)
 ----------------------------------- */
 nav {
     width: 100%;
     background: var(--nav-bg);
     color: var(--nav-text);
-    padding: 18px 25px;
+    padding: 12px 16px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;              /* allow wrapping on small screens */
     align-items: center;
+    gap: 10px;
     box-shadow: 0 2px 10px var(--shadow);
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
+/* logo always first row */
 nav .logo {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
+    flex: 1 0 100%;               /* full width on mobile */
 }
 
+/* nav items */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    flex-wrap: wrap;              /* wrap links instead of overflowing */
+    gap: 12px;
+    flex: 1 0 100%;               /* full width under logo on mobile */
 }
 
 nav ul li a {
     color: var(--nav-text);
     text-decoration: none;
     font-weight: 600;
-    transition: 0.2s ease;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav ul li a:hover {
     color: var(--accent);
+    background-color: rgba(10, 132, 255, 0.08);
+}
+
+/* On wider screens: logo left, links right in one row */
+@media (min-width: 640px) {
+    nav {
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
+
+    nav .logo {
+        flex: 0 0 auto;
+    }
+
+    nav ul {
+        flex: 0 0 auto;
+        justify-content: flex-end;
+    }
+}
+
+/* Center content and limit width */
+main, .container, footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 /* -----------------------------------
    CONTAINER
 ----------------------------------- */
 .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 32px;
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: 12px;
+    padding: 24px 18px;
+    border-radius: var(--radius-card);
     box-shadow: 0 4px 20px var(--shadow);
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 32px 32px;
+        margin-bottom: 40px;
+    }
 }
 
 /* -----------------------------------
@@ -99,39 +151,40 @@ nav ul li a:hover {
 ----------------------------------- */
 h1, h2, h3 {
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--nav-text);
 }
 
+/* fluid sizes */
 h1 {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 1.6rem;
-    margin-top: 30px;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    margin-top: 24px;
 }
 
 h3 {
-    font-size: 1.3rem;
-    margin-top: 20px;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    margin-top: 18px;
 }
 
 /* -----------------------------------
    TEXT ELEMENTS
 ----------------------------------- */
 p {
-    margin-bottom: 18px;
-    font-size: 1.05rem;
+    margin-bottom: 16px;
+    font-size: 1rem;
 }
 
 ul {
-    margin: 15px 0 20px 25px;
+    margin: 12px 0 18px 22px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 /* -----------------------------------
@@ -153,34 +206,44 @@ a:hover {
 .info-box {
     background: rgba(10, 132, 255, 0.12);
     border-left: 4px solid var(--accent);
-    padding: 15px 20px;
-    margin: 25px 0;
-    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 0.98rem;
 }
 
 /* -----------------------------------
    BUTTONS
 ----------------------------------- */
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: var(--accent);
     color: #fff;
-    padding: 12px 22px;
-    border-radius: 6px;
+    padding: 10px 18px;
+    border-radius: var(--radius-button);
     font-weight: 600;
-    transition: all 0.25s ease;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
     cursor: pointer;
     border: none;
+    text-decoration: none;
 }
 
-/* Hover highlight */
+/* Full-width buttons on very narrow screens if desired */
+@media (max-width: 400px) {
+    .button {
+        width: 100%;
+    }
+}
+
 .button:hover {
     background: var(--accent-dark);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(0, 110, 220, 0.25);
 }
 
-/* Click effect */
 .button:active {
     transform: translateY(0);
     box-shadow: 0 3px 8px rgba(0, 110, 220, 0.2);
@@ -191,8 +254,9 @@ a:hover {
 ----------------------------------- */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-top: 16px;
     color: var(--text);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
